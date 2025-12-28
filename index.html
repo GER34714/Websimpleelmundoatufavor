@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#ffffff" />
+
+  <title>El Mundo a Tu Favor® | Artesanías mágicas</title>
+  <meta name="description" content="Artesanías mágicas hechas a mano: duendes, hadas, pepones y sahumerios. Consultas por WhatsApp. Envíos a todo el país." />
+
+  <style>
+    :root{
+      --cian:#27B7FF;
+      --magenta:#FF2AA6;
+      --amarillo:#FFD23D;
+
+      --ink:#111318;
+      --muted:#5b6475;
+      --bg:#ffffff;
+      --paper:#f6f7fb;
+
+      --radius:18px;
+      --shadow: 0 16px 40px rgba(16,19,24,.10);
+      --shadow2: 0 10px 22px rgba(16,19,24,.08);
+
+      --max: 1080px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+      color:var(--ink);
+      background:
+        radial-gradient(1100px 650px at 10% -10%, rgba(39,183,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 110% 10%, rgba(255,42,166,.14), transparent 55%),
+        radial-gradient(900px 520px at 35% 115%, rgba(255,210,61,.14), transparent 60%),
+        linear-gradient(180deg, #ffffff 0%, #fbfbfe 60%, #ffffff 100%);
+      overflow-x:hidden;
+    }
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; display:block; }
+
+    .wrap{ max-width:var(--max); margin:0 auto; padding:0 16px; }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background: rgba(255,255,255,.86);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid rgba(16,19,24,.08);
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 0;
+    }
+
+    .brand{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+      min-width: 210px;
+    }
+    .brand b{ font-size:15px; }
+    .brand span{ font-size:12.5px; color:var(--muted); }
+
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:center;
+      align-items:center;
+    }
+    .navlink{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 12px;
+      border-radius:14px;
+      border:1px solid rgba(16,19,24,.10);
+      background: rgba(255,255,255,.92);
+      box-shadow: var(--shadow2);
+      font-weight:900;
+      font-size:13px;
+      transition:.18s ease;
+      -webkit-tap-highlight-color: transparent;
+      white-space:nowrap;
+    }
+    .navlink:hover{ transform: translateY(-1px); }
+
+    .actions{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid rgba(16,19,24,.10);
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--shadow2);
+      font-weight:1000;
+      font-size:13.5px;
+      cursor:pointer;
+      transition:.18s ease;
+      user-select:none;
+      white-space:nowrap;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+
+    .btnPrimary{
+      border:none;
+      color:#0d1117;
+      background: linear-gradient(90deg, rgba(39,183,255,.96), rgba(255,42,166,.88), rgba(255,210,61,.92));
+      box-shadow: 0 14px 30px rgba(16,19,24,.14);
+    }
+
+    .hero{
+      padding:16px 0 10px;
+    }
+    .heroCard{
+      border-radius: calc(var(--radius) + 10px);
+      border:1px solid rgba(16,19,24,.10);
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:0;
+    }
+
+    .heroImg{
+      min-height: 320px;
+      background-color: #ffffff;
+      background-image: url("https://iili.io/fVZ8ssf.md.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
+
+    .heroBody{
+      padding:18px;
+      border-left:1px solid rgba(16,19,24,.08);
+      background: rgba(255,255,255,.96);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      gap:12px;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(26px, 3.9vw, 42px);
+      letter-spacing:-.8px;
+      line-height:1.05;
+    }
+    .sub{
+      margin:0;
+      color: rgba(16,19,24,.74);
+      font-size:14.8px;
+      line-height:1.45;
+      max-width: 62ch;
+    }
+
+    .heroBadges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .badge{
+      display:inline-flex;
+      width:fit-content;
+      padding:7px 10px;
+      border-radius:999px;
+      border:1px solid rgba(16,19,24,.10);
+      background: rgba(246,247,251,.92);
+      font-size:12px;
+      font-weight:1000;
+      color: rgba(16,19,24,.78);
+      white-space:nowrap;
+    }
+
+    .heroCtas{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .btnGhost{
+      background: rgba(255,255,255,.94);
+    }
+
+    section{ padding:18px 0; }
+
+    .sectionHead{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:12px;
+      flex-wrap:wrap;
+    }
+    .sectionHead h2{
+      margin:0;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    .sectionHead p{
+      margin:0;
+      font-size:13px;
+      color: rgba(16,19,24,.70);
+      max-width: 66ch;
+      line-height:1.35;
+    }
+
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .panel{
+      border-radius: var(--radius);
+      border:1px solid rgba(16,19,24,.10);
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--shadow2);
+      padding:14px;
+    }
+    .panel h3{
+      margin:0 0 8px;
+      font-size:15px;
+      letter-spacing:-.2px;
+    }
+    .panel p{
+      margin:0;
+      color: rgba(16,19,24,.72);
+      font-size:13.2px;
+      line-height:1.45;
+    }
+    .steps{
+      display:grid;
+      gap:10px;
+      margin-top:10px;
+    }
+    .step{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:10px;
+      border-radius: 14px;
+      border:1px solid rgba(16,19,24,.10);
+      background: rgba(246,247,251,.88);
+    }
+    .dot{
+      width:28px;
+      height:28px;
+      border-radius: 999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:1100;
+      background: linear-gradient(90deg, rgba(39,183,255,.96), rgba(255,42,166,.88), rgba(255,210,61,.92));
+      color:#0d1117;
+      flex: 0 0 auto;
+    }
+    .step b{ display:block; font-size:13.2px; }
+    .step span{ display:block; font-size:12.8px; color: rgba(16,19,24,.72); line-height:1.35; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:12px;
+    }
+    .card{
+      grid-column: span 4;
+      border-radius: var(--radius);
+      border:1px solid rgba(16,19,24,.10);
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height:100%;
+    }
+    .thumb{
+      height: 210px;
+      border-bottom:1px solid rgba(16,19,24,.08);
+      position:relative;
+      overflow:hidden;
+      background: rgba(246,247,251,.9);
+    }
+    .thumb img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .body{
+      padding:12px;
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      flex:1 1 auto;
+    }
+    .tag{
+      display:inline-flex;
+      width: fit-content;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(16,19,24,.10);
+      background: rgba(246,247,251,.92);
+      font-size:12px;
+      font-weight:1100;
+      color: rgba(16,19,24,.78);
+    }
+    .body h3{
+      margin:0;
+      font-size:15px;
+      letter-spacing:-.2px;
+      line-height:1.2;
+    }
+    .body .mini{
+      margin:0;
+      font-size:13px;
+      color: rgba(16,19,24,.72);
+      line-height:1.35;
+    }
+    .cardFooter{
+      padding:12px;
+      border-top:1px solid rgba(16,19,24,.08);
+    }
+    .btnFull{
+      width:100%;
+      border:none;
+      border-radius:14px;
+      padding:12px 12px;
+      font-weight:1100;
+      cursor:pointer;
+      background: linear-gradient(90deg, rgba(39,183,255,.96), rgba(255,42,166,.88), rgba(255,210,61,.92));
+      color:#0d1117;
+      box-shadow: var(--shadow2);
+      transition:.18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btnFull:hover{ transform: translateY(-1px); }
+
+    .cta{
+      border-radius: calc(var(--radius) + 10px);
+      border:1px solid rgba(16,19,24,.10);
+      background: rgba(255,255,255,.94);
+      box-shadow: var(--shadow);
+      padding:16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .cta b{
+      font-size:16px;
+      letter-spacing:-.2px;
+    }
+    .cta span{
+      display:block;
+      font-size:13px;
+      color: rgba(16,19,24,.72);
+      line-height:1.35;
+      margin-top:4px;
+      max-width: 70ch;
+    }
+
+    footer{
+      border-top:1px solid rgba(16,19,24,.10);
+      background: rgba(246,247,251,.78);
+      padding: 16px 0 120px;
+      margin-top: 10px;
+    }
+    .fine{
+      font-size:12.5px;
+      color: rgba(16,19,24,.70);
+      line-height:1.35;
+    }
+    .fine a{ text-decoration:underline; text-underline-offset:3px; font-weight:900; }
+
+    .waFloat{
+      position:fixed;
+      right:16px;
+      bottom: calc(16px + env(safe-area-inset-bottom));
+      z-index:60;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 14px;
+      border-radius:999px;
+      border:none;
+      cursor:pointer;
+      font-weight:1100;
+      color:#0d1117;
+      background: linear-gradient(90deg, rgba(39,183,255,.96), rgba(255,42,166,.88), rgba(255,210,61,.92));
+      box-shadow: 0 18px 36px rgba(16,19,24,.18);
+      transition:.18s ease;
+      user-select:none;
+      white-space:nowrap;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .waFloat:hover{ transform: translateY(-2px); }
+
+    @media (max-width: 980px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .heroBody{ border-left:none; border-top:1px solid rgba(16,19,24,.08); }
+      .heroImg{ min-height: 280px; }
+      .card{ grid-column: span 6; }
+      .split{ grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px){
+      .card{ grid-column: span 12; }
+      .heroImg{ min-height: 250px; }
+      .heroBody{ padding:14px; }
+      .btn, .navlink{ padding:10px 12px; font-size:13px; }
+      .btnFull{ padding:12px 12px; }
+      .waFloat{ right:12px; bottom: calc(12px + env(safe-area-inset-bottom)); padding:12px 13px; }
+      .brand b{ font-size:14.5px; }
+      .brand span{ font-size:12px; }
+      .thumb{ height: 240px; }
+      nav{ display:none; }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const CONFIG = {
+      WHATSAPP_NUMBER: "54911XXXXXXXXXX",
+      INSTAGRAM_URL: "https://www.instagram.com/elmundoatufavor/"
+    };
+
+    function waOpen(message){
+      const text = encodeURIComponent(message);
+      window.open(`https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${text}`, "_blank", "noopener,noreferrer");
+    }
+  </script>
+
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <b>El Mundo a Tu Favor®</b>
+          <span>Artesanías mágicas • Hechas a mano</span>
+        </div>
+
+        <nav aria-label="Secciones">
+          <a class="navlink" href="#como">Cómo comprar</a>
+          <a class="navlink" href="#destacados">Destacados</a>
+          <a class="navlink" href="#categorias">Categorías</a>
+          <a class="navlink" href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="actions">
+          <a class="btn" href="https://www.instagram.com/elmundoatufavor/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <button class="btn btnPrimary" type="button" onclick="waOpen('Hola! 👋 Vi la landing de El Mundo a Tu Favor y quería consultar 😊')">WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="hero" id="inicio">
+        <div class="heroCard">
+          <div class="heroGrid">
+            <div class="heroImg" aria-hidden="true"></div>
+            <div class="heroBody">
+              <div>
+                <h1>Artesanías mágicas hechas a mano</h1>
+                <p class="sub">Duendes, hadas, pepones y sahumerios artesanales. Elegí tu pieza, consultá por WhatsApp y coordinamos envío a todo el país.</p>
+              </div>
+
+              <div class="heroBadges" aria-label="Beneficios">
+                <span class="badge">Hecho a mano</span>
+                <span class="badge">Regalos y decoración</span>
+                <span class="badge">Envíos a todo el país</span>
+                <span class="badge">Atención por WhatsApp</span>
+              </div>
+
+              <div class="heroCtas">
+                <button class="btn btnPrimary" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por artesanías (duendes/hadas/pepones/sahumerios). ¿Me contás qué hay disponible?')">Consultar ahora</button>
+                <a class="btn btnGhost" href="#categorias">Ver categorías</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="como">
+        <div class="sectionHead">
+          <div>
+            <h2>Cómo comprar</h2>
+            <p>Simple y rápido: consultás, coordinamos detalles y te lo enviamos.</p>
+          </div>
+        </div>
+
+        <div class="split">
+          <div class="panel">
+            <h3>Pasos</h3>
+            <div class="steps">
+              <div class="step">
+                <div class="dot">1</div>
+                <div>
+                  <b>Elegí lo que te gustó</b>
+                  <span>Podés mirar las categorías o los destacados de abajo.</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="dot">2</div>
+                <div>
+                  <b>Consultá por WhatsApp</b>
+                  <span>Te respondemos stock, medidas, variantes y precio.</span>
+                </div>
+              </div>
+              <div class="step">
+                <div class="dot">3</div>
+                <div>
+                  <b>Envío a todo el país</b>
+                  <span>Coordinamos envío y forma de pago según tu ubicación.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>¿Querés una recomendación?</h3>
+            <p>Contanos para qué lo necesitás (regalo, negocio, hogar, protección, abundancia, armonización) y te sugerimos opciones disponibles.</p>
+            <div style="height:12px"></div>
+            <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero una recomendación. Es para: (regalo/negocio/hogar). ¿Qué me sugerís que esté disponible?')">Pedir recomendación por WhatsApp</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="destacados">
+        <div class="sectionHead">
+          <div>
+            <h2>Destacados</h2>
+            <p>Algunas piezas para que veas el estilo. Después se pueden sumar más productos (y precios si quieren).</p>
+          </div>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <div class="thumb">
+              <img src="https://iili.io/fVZTviN.md.jpg" alt="Hada artesanal (El Mundo a Tu Favor)" />
+            </div>
+            <div class="body">
+              <span class="tag">Hadas</span>
+              <h3>Hada artesanal “Guardiana”</h3>
+              <p class="mini">Pieza hecha a mano con detalles finos. Ideal para regalar y decorar espacios con buena energía.</p>
+            </div>
+            <div class="cardFooter">
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Hada artesanal “Guardiana”. ¿Me pasás disponibilidad y medidas?')">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://iili.io/fVZTSfI.md.jpg" alt="Hada artesanal (El Mundo a Tu Favor)" />
+            </div>
+            <div class="body">
+              <span class="tag">Hadas</span>
+              <h3>Hada artesanal “Dulce”</h3>
+              <p class="mini">Hecha a mano, con colores armoniosos. Se puede consultar por personalización según disponibilidad.</p>
+            </div>
+            <div class="cardFooter">
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Hada artesanal “Dulce”. ¿Qué colores hay disponibles?')">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://iili.io/fVZAU9n.md.jpg" alt="Duende de la abundancia (El Mundo a Tu Favor)" />
+            </div>
+            <div class="body">
+              <span class="tag">Duendes de la abundancia</span>
+              <h3>Duende de la Abundancia</h3>
+              <p class="mini">Artesanía con intención para atraer prosperidad y buena energía. Ideal para negocios, hogar o regalos.</p>
+            </div>
+            <div class="cardFooter">
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Duende de la Abundancia. ¿Me pasás medidas, precio y stock?')">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://iili.io/fVZlzVs.md.jpg" alt="Pepón artesanal (El Mundo a Tu Favor)" />
+            </div>
+            <div class="body">
+              <span class="tag">Pepones</span>
+              <h3>Pepón artesanal “Jardín”</h3>
+              <p class="mini">Hecho a mano, perfecto para decorar rincones, estantes o macetas. Súper simpático y llamativo.</p>
+            </div>
+            <div class="cardFooter">
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Pepón artesanal “Jardín”. ¿Me pasás medidas y disponibilidad?')">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://iili.io/fVZlIiG.md.jpg" alt="Pepón artesanal (El Mundo a Tu Favor)" />
+            </div>
+            <div class="body">
+              <span class="tag">Pepones</span>
+              <h3>Pepón artesanal “Protector”</h3>
+              <p class="mini">Artesanía única para entradas o espacios especiales. Consultá por variantes y colores disponibles.</p>
+            </div>
+            <div class="cardFooter">
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Pepón artesanal “Protector”. ¿Qué opciones tenés disponibles?')">Consultar por WhatsApp</button>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb">
+              <img src="https://iili.io/fVtngP1.md.jpg" alt="Sahumerios artesanales (El Mundo a Tu Favor)" />
+            </div>
+            <div class="body">
+              <span class="tag">Sahumerios</span>
+              <h3>Sahumerios artesanales</h3>
+              <p class="mini">Aromas con intención para armonizar el hogar. Consultá aromas disponibles, combos y envíos.</p>
+            </div>
+            <div class="cardFooter">
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por Sahumerios artesanales. ¿Qué aromas tenés disponibles y cuánto sale el envío?')">Consultar por WhatsApp</button>
+            </div>
+          </article>
+  </div>
+  
