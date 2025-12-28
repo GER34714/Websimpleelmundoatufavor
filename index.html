@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#ffffff" />
 
-  <title>El Mundo a Tu Favor® | Artesanías mágicas</title>
-  <meta name="description" content="Artesanías mágicas hechas a mano: duendes, hadas, pepones y sahumerios. Consultas por WhatsApp. Envíos a todo el país." />
+  <title>El Mundo a Tu Favor® | Artesanías</title>
+  <meta name="description" content="Artesanías mágicas hechas a mano: hadas, duendes, pepones y sahumerios. Consultas por WhatsApp. Envíos a todo el país." />
 
   <style>
     :root{
@@ -23,7 +23,7 @@
       --shadow: 0 16px 40px rgba(16,19,24,.10);
       --shadow2: 0 10px 22px rgba(16,19,24,.08);
 
-      --max: 1080px;
+      --max: 1060px;
     }
 
     *{ box-sizing:border-box; }
@@ -52,7 +52,6 @@
       backdrop-filter: blur(14px);
       border-bottom:1px solid rgba(16,19,24,.08);
     }
-
     .topbar{
       display:flex;
       align-items:center;
@@ -60,39 +59,14 @@
       gap:12px;
       padding:12px 0;
     }
-
     .brand{
       display:flex;
       flex-direction:column;
       line-height:1.1;
-      min-width: 210px;
+      min-width: 200px;
     }
     .brand b{ font-size:15px; }
     .brand span{ font-size:12.5px; color:var(--muted); }
-
-    nav{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-      justify-content:center;
-      align-items:center;
-    }
-    .navlink{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 12px;
-      border-radius:14px;
-      border:1px solid rgba(16,19,24,.10);
-      background: rgba(255,255,255,.92);
-      box-shadow: var(--shadow2);
-      font-weight:900;
-      font-size:13px;
-      transition:.18s ease;
-      -webkit-tap-highlight-color: transparent;
-      white-space:nowrap;
-    }
-    .navlink:hover{ transform: translateY(-1px); }
 
     .actions{
       display:flex;
@@ -128,9 +102,8 @@
       box-shadow: 0 14px 30px rgba(16,19,24,.14);
     }
 
-    .hero{
-      padding:16px 0 10px;
-    }
+    /* HERO */
+    .hero{ padding:16px 0 10px; }
     .heroCard{
       border-radius: calc(var(--radius) + 10px);
       border:1px solid rgba(16,19,24,.10);
@@ -138,71 +111,42 @@
       box-shadow: var(--shadow);
       overflow:hidden;
     }
-
-    .heroGrid{
-      display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:0;
-    }
-
     .heroImg{
-      min-height: 320px;
-      background-color: #ffffff;
+      height: 320px;
+      background-color:#fff;
       background-image: url("https://iili.io/fVZ8ssf.md.jpg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
+      background-repeat:no-repeat;
+      background-position:center;
+      background-size:contain;
     }
-
     .heroBody{
-      padding:18px;
-      border-left:1px solid rgba(16,19,24,.08);
+      padding:16px;
+      border-top:1px solid rgba(16,19,24,.08);
       background: rgba(255,255,255,.96);
       display:flex;
-      flex-direction:column;
-      justify-content:center;
+      align-items:flex-end;
+      justify-content:space-between;
       gap:12px;
+      flex-wrap:wrap;
     }
-
     h1{
-      margin:0;
-      font-size: clamp(26px, 3.9vw, 42px);
-      letter-spacing:-.8px;
+      margin:0 0 6px;
+      font-size: clamp(24px, 3.8vw, 38px);
+      letter-spacing:-.7px;
       line-height:1.05;
     }
     .sub{
       margin:0;
       color: rgba(16,19,24,.74);
-      font-size:14.8px;
-      line-height:1.45;
-      max-width: 62ch;
+      font-size:14.5px;
+      line-height:1.4;
+      max-width: 70ch;
     }
-
-    .heroBadges{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-    .badge{
-      display:inline-flex;
-      width:fit-content;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid rgba(16,19,24,.10);
-      background: rgba(246,247,251,.92);
-      font-size:12px;
-      font-weight:1000;
-      color: rgba(16,19,24,.78);
-      white-space:nowrap;
-    }
-
-    .heroCtas{
+    .heroCta{
       display:flex;
       gap:10px;
       flex-wrap:wrap;
-    }
-    .btnGhost{
-      background: rgba(255,255,255,.94);
+      align-items:center;
     }
 
     section{ padding:18px 0; }
@@ -224,62 +168,11 @@
       margin:0;
       font-size:13px;
       color: rgba(16,19,24,.70);
-      max-width: 66ch;
+      max-width: 62ch;
       line-height:1.35;
     }
 
-    .split{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:12px;
-    }
-    .panel{
-      border-radius: var(--radius);
-      border:1px solid rgba(16,19,24,.10);
-      background: rgba(255,255,255,.94);
-      box-shadow: var(--shadow2);
-      padding:14px;
-    }
-    .panel h3{
-      margin:0 0 8px;
-      font-size:15px;
-      letter-spacing:-.2px;
-    }
-    .panel p{
-      margin:0;
-      color: rgba(16,19,24,.72);
-      font-size:13.2px;
-      line-height:1.45;
-    }
-    .steps{
-      display:grid;
-      gap:10px;
-      margin-top:10px;
-    }
-    .step{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:10px;
-      border-radius: 14px;
-      border:1px solid rgba(16,19,24,.10);
-      background: rgba(246,247,251,.88);
-    }
-    .dot{
-      width:28px;
-      height:28px;
-      border-radius: 999px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:1100;
-      background: linear-gradient(90deg, rgba(39,183,255,.96), rgba(255,42,166,.88), rgba(255,210,61,.92));
-      color:#0d1117;
-      flex: 0 0 auto;
-    }
-    .step b{ display:block; font-size:13.2px; }
-    .step span{ display:block; font-size:12.8px; color: rgba(16,19,24,.72); line-height:1.35; }
-
+    /* GALERIA */
     .grid{
       display:grid;
       grid-template-columns: repeat(12, 1fr);
@@ -297,7 +190,7 @@
       min-height:100%;
     }
     .thumb{
-      height: 210px;
+      height: 220px;
       border-bottom:1px solid rgba(16,19,24,.08);
       position:relative;
       overflow:hidden;
@@ -357,7 +250,8 @@
     }
     .btnFull:hover{ transform: translateY(-1px); }
 
-    .cta{
+    /* CONTACTO */
+    .contact{
       border-radius: calc(var(--radius) + 10px);
       border:1px solid rgba(16,19,24,.10);
       background: rgba(255,255,255,.94);
@@ -369,11 +263,11 @@
       gap:12px;
       flex-wrap:wrap;
     }
-    .cta b{
+    .contact b{
       font-size:16px;
       letter-spacing:-.2px;
     }
-    .cta span{
+    .contact span{
       display:block;
       font-size:13px;
       color: rgba(16,19,24,.72);
@@ -385,7 +279,7 @@
     footer{
       border-top:1px solid rgba(16,19,24,.10);
       background: rgba(246,247,251,.78);
-      padding: 16px 0 120px;
+      padding: 16px 0 110px;
       margin-top: 10px;
     }
     .fine{
@@ -395,6 +289,7 @@
     }
     .fine a{ text-decoration:underline; text-underline-offset:3px; font-weight:900; }
 
+    /* BOTON FLOTANTE */
     .waFloat{
       position:fixed;
       right:16px;
@@ -418,24 +313,21 @@
     }
     .waFloat:hover{ transform: translateY(-2px); }
 
-    @media (max-width: 980px){
-      .heroGrid{ grid-template-columns: 1fr; }
-      .heroBody{ border-left:none; border-top:1px solid rgba(16,19,24,.08); }
-      .heroImg{ min-height: 280px; }
+    @media (max-width: 900px){
       .card{ grid-column: span 6; }
-      .split{ grid-template-columns: 1fr; }
+      .heroImg{ height: 280px; }
+      .thumb{ height: 230px; }
     }
     @media (max-width: 560px){
       .card{ grid-column: span 12; }
-      .heroImg{ min-height: 250px; }
+      .heroImg{ height: 250px; }
       .heroBody{ padding:14px; }
-      .btn, .navlink{ padding:10px 12px; font-size:13px; }
+      .btn{ padding:10px 12px; font-size:13px; }
       .btnFull{ padding:12px 12px; }
       .waFloat{ right:12px; bottom: calc(12px + env(safe-area-inset-bottom)); padding:12px 13px; }
       .brand b{ font-size:14.5px; }
       .brand span{ font-size:12px; }
-      .thumb{ height: 240px; }
-      nav{ display:none; }
+      .thumb{ height: 250px; }
     }
   </style>
 </head>
@@ -458,19 +350,13 @@
       <div class="topbar">
         <div class="brand">
           <b>El Mundo a Tu Favor®</b>
-          <span>Artesanías mágicas • Hechas a mano</span>
+          <span>Hadas • Duendes • Pepones • Sahumerios</span>
         </div>
-
-        <nav aria-label="Secciones">
-          <a class="navlink" href="#como">Cómo comprar</a>
-          <a class="navlink" href="#destacados">Destacados</a>
-          <a class="navlink" href="#categorias">Categorías</a>
-          <a class="navlink" href="#contacto">Contacto</a>
-        </nav>
 
         <div class="actions">
           <a class="btn" href="https://www.instagram.com/elmundoatufavor/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <button class="btn btnPrimary" type="button" onclick="waOpen('Hola! 👋 Vi la landing de El Mundo a Tu Favor y quería consultar 😊')">WhatsApp</button>
+          <a class="btn" href="#galeria">Galería</a>
+          <button class="btn btnPrimary" type="button" onclick="waOpen('Hola! 👋 Vi la landing y quería consultar 😊')">WhatsApp</button>
         </div>
       </div>
     </div>
@@ -478,82 +364,29 @@
 
   <main>
     <div class="wrap">
+      <!-- HERO -->
       <section class="hero" id="inicio">
         <div class="heroCard">
-          <div class="heroGrid">
-            <div class="heroImg" aria-hidden="true"></div>
-            <div class="heroBody">
-              <div>
-                <h1>Artesanías mágicas hechas a mano</h1>
-                <p class="sub">Duendes, hadas, pepones y sahumerios artesanales. Elegí tu pieza, consultá por WhatsApp y coordinamos envío a todo el país.</p>
-              </div>
-
-              <div class="heroBadges" aria-label="Beneficios">
-                <span class="badge">Hecho a mano</span>
-                <span class="badge">Regalos y decoración</span>
-                <span class="badge">Envíos a todo el país</span>
-                <span class="badge">Atención por WhatsApp</span>
-              </div>
-
-              <div class="heroCtas">
-                <button class="btn btnPrimary" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por artesanías (duendes/hadas/pepones/sahumerios). ¿Me contás qué hay disponible?')">Consultar ahora</button>
-                <a class="btn btnGhost" href="#categorias">Ver categorías</a>
-              </div>
+          <div class="heroImg" aria-hidden="true"></div>
+          <div class="heroBody">
+            <div>
+              <h1>Artesanías mágicas hechas a mano</h1>
+              <p class="sub">Elegí en la galería y consultá por WhatsApp. Coordinamos stock, medidas y envíos a todo el país.</p>
+            </div>
+            <div class="heroCta">
+              <a class="btn" href="#galeria">Ver galería</a>
+              <button class="btn btnPrimary" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por artesanías (haditas/duendes/pepones/sahumerios). ¿Qué hay disponible?')">Consultar</button>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="como">
+      <!-- GALERIA -->
+      <section id="galeria">
         <div class="sectionHead">
           <div>
-            <h2>Cómo comprar</h2>
-            <p>Simple y rápido: consultás, coordinamos detalles y te lo enviamos.</p>
-          </div>
-        </div>
-
-        <div class="split">
-          <div class="panel">
-            <h3>Pasos</h3>
-            <div class="steps">
-              <div class="step">
-                <div class="dot">1</div>
-                <div>
-                  <b>Elegí lo que te gustó</b>
-                  <span>Podés mirar las categorías o los destacados de abajo.</span>
-                </div>
-              </div>
-              <div class="step">
-                <div class="dot">2</div>
-                <div>
-                  <b>Consultá por WhatsApp</b>
-                  <span>Te respondemos stock, medidas, variantes y precio.</span>
-                </div>
-              </div>
-              <div class="step">
-                <div class="dot">3</div>
-                <div>
-                  <b>Envío a todo el país</b>
-                  <span>Coordinamos envío y forma de pago según tu ubicación.</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="panel">
-            <h3>¿Querés una recomendación?</h3>
-            <p>Contanos para qué lo necesitás (regalo, negocio, hogar, protección, abundancia, armonización) y te sugerimos opciones disponibles.</p>
-            <div style="height:12px"></div>
-            <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero una recomendación. Es para: (regalo/negocio/hogar). ¿Qué me sugerís que esté disponible?')">Pedir recomendación por WhatsApp</button>
-          </div>
-        </div>
-      </section>
-
-      <section id="destacados">
-        <div class="sectionHead">
-          <div>
-            <h2>Destacados</h2>
-            <p>Algunas piezas para que veas el estilo. Después se pueden sumar más productos (y precios si quieren).</p>
+            <h2>Galería</h2>
+            <p>Fotos de ejemplo. Si querés, después sumamos más productos y/o precios.</p>
           </div>
         </div>
 
@@ -565,10 +398,10 @@
             <div class="body">
               <span class="tag">Hadas</span>
               <h3>Hada artesanal “Guardiana”</h3>
-              <p class="mini">Pieza hecha a mano con detalles finos. Ideal para regalar y decorar espacios con buena energía.</p>
+              <p class="mini">Pieza hecha a mano con detalles finos. Ideal para regalo y decoración.</p>
             </div>
             <div class="cardFooter">
-              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Hada artesanal “Guardiana”. ¿Me pasás disponibilidad y medidas?')">Consultar por WhatsApp</button>
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Hada artesanal “Guardiana”. ¿Me pasás disponibilidad y medidas?')">Consultar</button>
             </div>
           </article>
 
@@ -579,10 +412,10 @@
             <div class="body">
               <span class="tag">Hadas</span>
               <h3>Hada artesanal “Dulce”</h3>
-              <p class="mini">Hecha a mano, con colores armoniosos. Se puede consultar por personalización según disponibilidad.</p>
+              <p class="mini">Hecha a mano, colores armoniosos. Consultá por variantes disponibles.</p>
             </div>
             <div class="cardFooter">
-              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Hada artesanal “Dulce”. ¿Qué colores hay disponibles?')">Consultar por WhatsApp</button>
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Hada artesanal “Dulce”. ¿Qué colores hay disponibles?')">Consultar</button>
             </div>
           </article>
 
@@ -593,10 +426,10 @@
             <div class="body">
               <span class="tag">Duendes de la abundancia</span>
               <h3>Duende de la Abundancia</h3>
-              <p class="mini">Artesanía con intención para atraer prosperidad y buena energía. Ideal para negocios, hogar o regalos.</p>
+              <p class="mini">Artesanía con intención para atraer prosperidad. Ideal para hogar o negocio.</p>
             </div>
             <div class="cardFooter">
-              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Duende de la Abundancia. ¿Me pasás medidas, precio y stock?')">Consultar por WhatsApp</button>
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Duende de la Abundancia. ¿Me pasás medidas, precio y stock?')">Consultar</button>
             </div>
           </article>
 
@@ -607,10 +440,10 @@
             <div class="body">
               <span class="tag">Pepones</span>
               <h3>Pepón artesanal “Jardín”</h3>
-              <p class="mini">Hecho a mano, perfecto para decorar rincones, estantes o macetas. Súper simpático y llamativo.</p>
+              <p class="mini">Perfecto para rincones, estantes o macetas. Súper simpático y llamativo.</p>
             </div>
             <div class="cardFooter">
-              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Pepón artesanal “Jardín”. ¿Me pasás medidas y disponibilidad?')">Consultar por WhatsApp</button>
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Pepón artesanal “Jardín”. ¿Me pasás medidas y disponibilidad?')">Consultar</button>
             </div>
           </article>
 
@@ -621,10 +454,10 @@
             <div class="body">
               <span class="tag">Pepones</span>
               <h3>Pepón artesanal “Protector”</h3>
-              <p class="mini">Artesanía única para entradas o espacios especiales. Consultá por variantes y colores disponibles.</p>
+              <p class="mini">Artesanía única para entradas o espacios especiales. Consultá por variantes.</p>
             </div>
             <div class="cardFooter">
-              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Pepón artesanal “Protector”. ¿Qué opciones tenés disponibles?')">Consultar por WhatsApp</button>
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por: Pepón artesanal “Protector”. ¿Qué opciones tenés disponibles?')">Consultar</button>
             </div>
           </article>
 
@@ -635,11 +468,49 @@
             <div class="body">
               <span class="tag">Sahumerios</span>
               <h3>Sahumerios artesanales</h3>
-              <p class="mini">Aromas con intención para armonizar el hogar. Consultá aromas disponibles, combos y envíos.</p>
+              <p class="mini">Aromas con intención para armonizar. Consultá aromas, combos y envíos.</p>
             </div>
             <div class="cardFooter">
-              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por Sahumerios artesanales. ¿Qué aromas tenés disponibles y cuánto sale el envío?')">Consultar por WhatsApp</button>
+              <button class="btnFull" type="button" onclick="waOpen('Hola! 😊 Quiero consultar por Sahumerios artesanales. ¿Qué aromas tenés disponibles y cuánto sale el envío?')">Consultar</button>
             </div>
           </article>
-  </div>
-  
+        </div>
+      </section>
+
+      <!-- CONTACTO -->
+      <section id="contacto">
+        <div class="contact">
+          <div>
+            <b>¿Querés consultar?</b>
+            <span>Escribinos por WhatsApp y te respondemos con stock, medidas, precios y envío. También podés ver novedades en Instagram.</span>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn" href="https://www.instagram.com/elmundoatufavor/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <button class="btn btnPrimary" type="button" onclick="waOpen('Hola! 👋 Quiero consultar por artesanías. ¿Me contás qué hay disponible?')">Hablar por WhatsApp</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p class="fine">
+        Instagram: <a href="https://www.instagram.com/elmundoatufavor/" target="_blank" rel="noopener noreferrer">@elmundoatufavor</a><br/>
+        <a href="https://ciborg347.onrender.com" target="_blank" rel="noopener noreferrer">Creado y diseñado por Ciborg 347</a>
+      </p>
+    </div>
+  </footer>
+
+  <button class="waFloat" type="button" onclick="waOpen('Hola! 👋 Vi la landing y quería consultar 😊')">WhatsApp</button>
+
+  <script>
+    (function(){
+      const n = (CONFIG.WHATSAPP_NUMBER || "").trim();
+      if(n.includes("X") || n.length < 10){
+        console.warn("Reemplazá WHATSAPP_NUMBER por el número real para que WhatsApp funcione.");
+      }
+    })();
+  </script>
+</body>
+</html>
